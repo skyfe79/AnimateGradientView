@@ -1,0 +1,2 @@
+# AnimateGradientView
+AnimateGradientView is AnimateGradientView
