@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AnimateGradientViewAttrs">
+        <attr name="agv_x" format="float" />
+        <attr name="agv_y" format="float" />
+        <attr name="agv_width" format="float" />
+        <attr name="agv_height" format="float" />
+        <attr name="agv_rotate" format="float" />
+        <attr name="agv_startColor" format="color" />
+        <attr name="agv_endColor" format="color" />
+        <attr name="agv_middleColor" format="color" />
+        <attr name="agv_startOffset" format="float" />
+        <attr name="agv_middleOffset" format="float" />
+        <attr name="agv_endOffset" format="float" />
+        <attr name="agv_alpha" format="float" />
+    </declare-styleable>
+</resources>
