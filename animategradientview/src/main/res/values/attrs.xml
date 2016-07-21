@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="AnimateGradientViewAttrs">
-        <attr name="agv_x" format="float" />
-        <attr name="agv_y" format="float" />
-        <attr name="agv_width" format="float" />
-        <attr name="agv_height" format="float" />
-        <attr name="agv_rotate" format="float" />
+        <attr name="agv_angle" format="float" />
         <attr name="agv_startColor" format="color" />
         <attr name="agv_endColor" format="color" />
         <attr name="agv_middleColor" format="color" />
@@ -13,5 +9,18 @@
         <attr name="agv_middleOffset" format="float" />
         <attr name="agv_endOffset" format="float" />
         <attr name="agv_alpha" format="float" />
+        <attr name="agv_gradient_scale" format="float" />
+        <attr name="agv_autostart_animation" format="boolean" />
+        <attr name="agv_duration" format="integer" />
+        <attr name="agv_animation" format="enum">
+            <enum name="rotation" value="0" />
+            <enum name="flow" value="1" />
+        </attr>
+        <attr name="agv_flow_direction">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+            <enum name="top" value="2" />
+            <enum name="bottom" value="3" />
+        </attr>
     </declare-styleable>
 </resources>

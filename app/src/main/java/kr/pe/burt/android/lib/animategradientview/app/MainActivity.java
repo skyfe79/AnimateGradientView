@@ -19,6 +19,5 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        agv.startTransitionXAnimation(1000, 1);
     }
 }
