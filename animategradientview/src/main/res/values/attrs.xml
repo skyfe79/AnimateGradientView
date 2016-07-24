@@ -10,7 +10,7 @@
         <attr name="agv_endOffset" format="float" />
         <attr name="agv_alpha" format="float" />
         <attr name="agv_gradient_scale" format="float" />
-        <attr name="agv_autostart_animation" format="boolean" />
+        <attr name="agv_autostart" format="boolean" />
         <attr name="agv_duration" format="integer" />
         <attr name="agv_animation" format="enum">
             <enum name="rotation" value="0" />

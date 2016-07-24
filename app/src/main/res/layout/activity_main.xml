@@ -14,10 +14,21 @@
         agv:agv_startColor="#FF2D55"
         agv:agv_endColor="#A542EA"
         agv:agv_alpha="1.0"
-        agv:agv_gradient_scale="2.0"
+        agv:agv_gradient_scale="1.4"
         agv:agv_animation="flow"
-        agv:agv_angle="90"
-        agv:agv_flow_direction="top"
+        agv:agv_angle="45"
         agv:agv_duration="1000"
         />
+
+
+    <it.gilvegliach.android.transparenttexttextview.TransparentTextTextView
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:background="#55ffffff"
+        android:textColor="#000"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        android:text="GITHUB"
+        android:gravity="center"/>
 </RelativeLayout>

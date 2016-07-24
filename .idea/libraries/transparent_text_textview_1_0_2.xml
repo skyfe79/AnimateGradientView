@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="transparent-text-textview-1.0.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/it.gilvegliach.android/transparent-text-textview/1.0.2/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/it.gilvegliach.android/transparent-text-textview/1.0.2/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/it.gilvegliach.android/transparent-text-textview/1.0.2/d8e28532516b634da9baaa7b303f2e6a23590d0c/transparent-text-textview-1.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -49,7 +49,7 @@ public class AnimateGradientView extends View {
     private FlowDirection flowDirection = FlowDirection.Left;
     private Boolean autoStartAnimation = true;
 
-    private Animator animator = null;
+    private ObjectAnimator animator = null;
 
     public enum AnimationType {
         Rotation,
@@ -125,7 +125,7 @@ public class AnimateGradientView extends View {
         }
 
         gradientScale = array.getFloat(R.styleable.AnimateGradientViewAttrs_agv_gradient_scale, gradientScale);
-        autoStartAnimation = array.getBoolean(R.styleable.AnimateGradientViewAttrs_agv_autostart_animation, autoStartAnimation);
+        autoStartAnimation = array.getBoolean(R.styleable.AnimateGradientViewAttrs_agv_autostart, autoStartAnimation);
         duration = array.getInt(R.styleable.AnimateGradientViewAttrs_agv_duration, (int)duration);
         array.recycle();
 
@@ -186,19 +186,16 @@ public class AnimateGradientView extends View {
 
         if(autoStartAnimation) {
             if(animationType == AnimationType.Flow) {
-                animator = startTransitionAnimation(duration, 1000, flowDirection);
+                startTransitionAnimation(duration, 1000, flowDirection);
             } else {
-                animator = startInfiniteRotationAnimation(duration);
+                startInfiniteRotationAnimation(duration);
             }
         }
     }
 
     @Override
     protected void onDetachedFromWindow() {
-        if(animator != null) {
-            animator.cancel();
-            animator = null;
-        }
+       stopAnimation();
         super.onDetachedFromWindow();
     }
 
@@ -248,7 +245,10 @@ public class AnimateGradientView extends View {
     }
 
     public Animator startInfiniteRotationAnimation(long duration) {
-        ObjectAnimator animator = ObjectAnimator.ofFloat(this, "angle", 0.0f, 360.0f);
+        if(isInEditMode())
+            return null;
+
+        animator = ObjectAnimator.ofFloat(this, "angle", 0.0f, 360.0f);
         animator.setDuration(duration);
         animator.setRepeatCount(ObjectAnimator.INFINITE);
         animator.setRepeatMode(ObjectAnimator.INFINITE);
@@ -258,7 +258,11 @@ public class AnimateGradientView extends View {
     }
 
     public Animator startRotateAnimation(long duration, int count) {
-        ObjectAnimator animator = ObjectAnimator.ofFloat(this, "angle", 0.0f, 360.0f);
+
+        if(isInEditMode())
+            return null;
+
+        animator = ObjectAnimator.ofFloat(this, "angle", 0.0f, 360.0f);
         animator.setDuration(duration);
         animator.setRepeatCount(count);
         animator.setRepeatMode(ObjectAnimator.RESTART);
@@ -267,10 +271,11 @@ public class AnimateGradientView extends View {
         return animator;
     }
 
-    // 잘 안되고 있음
-    // @link { http://stackoverflow.com/questions/32224797/how-to-animate-gradient }
-    // 위 링크를 참고해 보자
     public Animator startTransitionAnimation(long duration, int length, FlowDirection direction) {
+
+        if(isInEditMode())
+            return null;
+
 
         float from;
         float to;
@@ -286,13 +291,21 @@ public class AnimateGradientView extends View {
                 to = 0.0f;
 
         }
-        ObjectAnimator animator = ObjectAnimator.ofFloat(this, "gradientOffset", from, to);
+        animator = ObjectAnimator.ofFloat(this, "gradientOffset", from, to);
         animator.setDuration(duration * 1000);
         animator.setRepeatCount(ObjectAnimator.INFINITE);
-        animator.setRepeatMode(ObjectAnimator.REVERSE);
+        animator.setRepeatMode(ObjectAnimator.RESTART);
         animator.setInterpolator(new LinearInterpolator());
         animator.start();
+
         return animator;
+    }
+
+    public void stopAnimation() {
+        if(animator != null) {
+            animator.cancel();
+            animator = null;
+        }
     }
 
 }
