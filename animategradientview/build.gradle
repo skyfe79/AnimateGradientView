@@ -1,4 +1,24 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.3.4'
+    }
+}
+
+publish {
+    userOrg = 'skyfe79'
+    groupId = 'kr.pe.burt.android.lib'
+    artifactId = 'animategradientview'
+    publishVersion = '0.0.1'
+    desc = 'AnimateGradientView is android library to make gredient flow or rotate infinitely'
+    website = 'https://github.com/skyfe79/AnimateGradientView'
+}
+
 
 android {
     compileSdkVersion 23
@@ -8,7 +28,7 @@ android {
         minSdkVersion 11
         targetSdkVersion 23
         versionCode 1
-        versionName "1.0"
+        versionName "0.0.1"
     }
     buildTypes {
         release {
