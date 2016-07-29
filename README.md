@@ -4,7 +4,7 @@
 
 # AnimateGradientView
 
-AnimateGradientView is android library to make gredient flow or rotate infinitely
+AnimateGradientView is android library to make gradient flow or rotate infinitely
 
 ![](art/example1.gif) ![](art/example2.gif)
 
