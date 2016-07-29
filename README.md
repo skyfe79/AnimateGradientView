@@ -18,6 +18,90 @@ dependencies {
 }
 ```
 
+## Attributes
+
+AnimateGradientView provides a few attributes for animating gradient.
+
+* agv_angle
+	* is rotation degree of the gradient
+	* is flat value
+	* from 0 to 360
+* agv_startColor
+	* is start color of the gradient
+	* is color value ( #RRGGBB )
+* agv_endColor
+	* is end color of the gradient
+	* is color value ( #RRGGBB )
+* agv_middleColor
+	* is middle color of the gradient
+	* is color value ( #RRGGBB )
+* agv_alpha
+	* is alpha value of the gradient
+	* is float value
+	* from 0.0 to 1.0
+* agv_startOffset
+	* is offset of start color
+	* is float value
+	* from 0.0 to 1.0
+* agv_middleOffset
+	* is offset of middle color
+	* is float value
+	* from 0.0 to 1.0
+* agv_endOffset
+	* is offset of end color
+	* is float value
+	* from 0.0 to 1.0
+* agv_gradient_scale
+	* is scale factor of the gradient
+	* is float value
+* agv_autostart
+	* true or false
+* agv_duration
+	* is friction value to animation
+* agv_animation
+	* rotation or flow
+* agv_flow_direction
+	* left, right, top or bottom 
+
+## Examples
+
+### Flow Animation 
+```xml
+<kr.pe.burt.android.lib.animategradientview.AnimateGradientView
+        android:id="@+id/agv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        agv:agv_startColor="#FF2D55"
+        agv:agv_endColor="#A542EA"
+        agv:agv_alpha="1.0"
+        agv:agv_gradient_scale="1.4"
+        agv:agv_animation="flow"
+        agv:agv_angle="45"
+        agv:agv_duration="1000"
+        />
+```
+
+### Rotate Animation
+
+```xml
+<kr.pe.burt.android.lib.animategradientview.AnimateGradientView
+        android:id="@+id/agv"
+        android:layout_width="320dp"
+        android:layout_height="68dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        agv:agv_startColor="#FF2D55"
+        agv:agv_endColor="#A542EA"
+        agv:agv_alpha="1.0"
+        agv:agv_gradient_scale="1.4"
+        agv:agv_animation="rotation"
+        agv:agv_duration="2000"
+        agv:agv_autostart="false"
+        />
+```
+
+
 ## MIT License
 
 The MIT License (MIT)
