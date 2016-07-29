@@ -14,7 +14,7 @@ AnimateGradientView is android library to make gradient flow or rotate infinitel
 ```groovy
 dependencies {
     ...
-    compile 'kr.pe.burt.android.lib:animategredientview:0.0.1'
+    compile 'kr.pe.burt.android.lib:animategradientview:0.0.1'
 }
 ```
 
